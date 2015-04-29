@@ -37,6 +37,11 @@ import org.junit.Test;
  */
 public class FailoverInheritErrorHandlerLoadBalancerTest extends CamelTestSupport {
 
+    @Override
+    public boolean isUseAdviceWith() {
+        return true;
+    }
+
     @Test
     public void testLoadBalancer() throws Exception {
         // simulate error when sending to service A
@@ -51,6 +56,7 @@ public class FailoverInheritErrorHandlerLoadBalancerTest extends CamelTestSuppor
                     .end();
             }
         });
+        context.start();
 
         // A should get the 1st
         MockEndpoint a = getMockEndpoint("mock:a");
