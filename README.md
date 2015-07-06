@@ -1,5 +1,5 @@
-Camel in Action
-============
+Camel in Action - 1st edition
+=============================
 
 This project hosts the source code for the examples of the [Camel in Action](http://manning.com/ibsen/) 1st edition book written by [Claus Ibsen](https://twitter.com/davsclaus) and [Jonathan Anstey](https://twitter.com/jon_anstey). 
 
