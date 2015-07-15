@@ -1,10 +1,15 @@
 Camel in Action - 1st edition
 =============================
 
-Notice: There is currently a [2nd edition](http://manning.com/ibsen/) of this book in the making.
-
 This project hosts the source code for the examples of the [Camel in Action](http://manning.com/ibsen/) 1st edition book written by [Claus Ibsen](https://twitter.com/davsclaus) and [Jonathan Anstey](https://twitter.com/jon_anstey). 
+
 ![Camel in Action cover](/docs/images/cia_cover150.jpg?raw=true)
+
+
+2nd edition in the making
+------------------------------
+
+There is currently a [2nd edition](http://manning.com/ibsen2/) of this book in the making.
 
 
 Downloading the source code
