@@ -21,7 +21,7 @@ You can either download a .zip with all the source code from the [releases page]
 Up to date source code
 -------------------------------
 
-We the authors, intended to keep this source code up to date with future releases of Apache Camel. Giving our readers the best experience with the book and using the latest Camel releases. We have been doing this since the book was published; at this time of writing that means for over 4 years.
+As we the authors, are currently working on the [2nd edition](http://manning.com/ibsen2/) of this book, then we no longer will provide updates for the 1st edition. 
 
 
 Getting in touch
