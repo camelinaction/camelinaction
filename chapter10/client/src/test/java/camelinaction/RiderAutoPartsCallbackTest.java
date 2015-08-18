@@ -74,8 +74,8 @@ public class RiderAutoPartsCallbackTest extends CamelTestSupport {
         }
         log.info("Send " + numPartners + " messages to partners.");
 
-        // wait at most 2 seconds or until we got all replies
-        boolean all = latch.await(2000, TimeUnit.MILLISECONDS);
+        // wait at most 3 seconds or until we got all replies
+        boolean all = latch.await(3000, TimeUnit.MILLISECONDS);
 
         // log what we got as reply
         log.info("Got " + relates.size() + " replies, is all? " + all);
