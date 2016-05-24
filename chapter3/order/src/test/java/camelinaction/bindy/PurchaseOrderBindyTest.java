@@ -17,6 +17,7 @@
 package camelinaction.bindy;
 
 import java.math.BigDecimal;
+import java.util.Locale;
 
 import junit.framework.TestCase;
 import org.apache.camel.CamelContext;
@@ -34,22 +35,29 @@ public class PurchaseOrderBindyTest extends TestCase {
 
     @Test
     public void testBindy() throws Exception {
-        CamelContext context = new DefaultCamelContext();
-        context.addRoutes(createRoute());
-        context.start();
+        final Locale locale = Locale.getDefault();
 
-        MockEndpoint mock = context.getEndpoint("mock:result", MockEndpoint.class);
-        mock.expectedBodiesReceived("Camel in Action,39.95,1\n");
+        try {
+            Locale.setDefault(Locale.US);
+            CamelContext context = new DefaultCamelContext();
+            context.addRoutes(createRoute());
+            context.start();
 
-        PurchaseOrder order = new PurchaseOrder();
-        order.setAmount(1);
-        order.setPrice(new BigDecimal("39.95"));
-        order.setName("Camel in Action");
+            MockEndpoint mock = context.getEndpoint("mock:result", MockEndpoint.class);
+            mock.expectedBodiesReceived("Camel in Action,39.95,1\n");
 
-        ProducerTemplate template = context.createProducerTemplate();
-        template.sendBody("direct:toCsv", order);
+            PurchaseOrder order = new PurchaseOrder();
+            order.setAmount(1);
+            order.setPrice(new BigDecimal("39.95"));
+            order.setName("Camel in Action");
 
-        mock.assertIsSatisfied();
+            ProducerTemplate template = context.createProducerTemplate();
+            template.sendBody("direct:toCsv", order);
+
+            mock.assertIsSatisfied();
+	} finally {
+            Locale.setDefault(locale);
+	}
     }
 
     public RouteBuilder createRoute() {
